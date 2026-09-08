@@ -48,8 +48,8 @@ export default function Home() {
               <Music size={32} strokeWidth={2} />
             </div>
 
-            <h1 className="text-[22px] font-bold text-ink mb-1">スタンプラリー</h1>
-            <p className="text-muted text-[13px]">ライブ来場デジタルスタンプ</p>
+            <h1 className="text-[22px] font-bold text-ink mb-1">스탬프 투어</h1>
+            <p className="text-muted text-[13px]">디지털 스탬프 투어</p>
           </div>
 
           <Perforation />
@@ -76,14 +76,14 @@ export default function Home() {
             href="/stamp-book"
             className="block w-full py-[14px] rounded-xl btn-brand text-white font-bold text-[15px] text-center"
           >
-            チケットを見る
+            스탬프북 보기
           </Link>
-          <p className="text-xs text-faint text-center">QRコードを読み取ってスタンプを獲得しよう</p>
+          <p className="text-xs text-faint text-center">QR코드를 스캔하고 스탬프를 획득하세요</p>
         </div>
 
         <div className="mt-10 pt-5 border-t border-line text-center">
           <Link href="/admin" className="text-[12px] text-faint hover:text-muted transition-colors">
-            管理者ページ
+            관리자 페이지
           </Link>
         </div>
       </div>

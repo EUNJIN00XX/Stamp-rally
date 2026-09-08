@@ -10,7 +10,7 @@ interface NicknameFormProps {
   defaultNickname?: string; // LINE表示名などのプリフィル用
 }
 
-const GENDERS = ['男性', '女性', 'その他'];
+const GENDERS = ['남성', '여성', '기타'];
 
 export default function NicknameForm({ onSubmit, loading, defaultNickname }: NicknameFormProps) {
   const [nickname, setNickname] = useState(defaultNickname?.slice(0, 20) ?? '');
@@ -46,8 +46,8 @@ export default function NicknameForm({ onSubmit, loading, defaultNickname }: Nic
 
       <div className="bg-white rounded-b-2xl px-5 pb-5 pt-5 card-shadow">
         <div className="text-center mb-6">
-          <h2 className="text-[20px] font-bold text-ink mb-1.5">ニックネームを登録</h2>
-          <p className="text-muted text-[13px]">表示される名前と基本情報を入力してください</p>
+          <h2 className="text-[20px] font-bold text-ink mb-1.5">이름 등록</h2>
+          <p className="text-muted text-[13px]">표시할 이름과 기본 정보를 입력해주세요</p>
         </div>
 
         <form
@@ -64,7 +64,7 @@ export default function NicknameForm({ onSubmit, loading, defaultNickname }: Nic
               type="text"
               value={nickname}
               onChange={(e) => setNickname(e.target.value)}
-              placeholder="例：ライブ大好き太郎"
+              placeholder="예: 홍길동"
               maxLength={20}
               className="w-full px-4 py-3.5 rounded-xl border border-line focus:border-accent focus:outline-none text-center text-[15px] font-medium bg-white text-ink"
               required
@@ -77,26 +77,26 @@ export default function NicknameForm({ onSubmit, loading, defaultNickname }: Nic
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-[12px] text-muted mb-1.5 font-medium">性別</label>
+              <label className="block text-[12px] text-muted mb-1.5 font-medium">성별</label>
               <select
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
                 required
                 className={selectClass}
               >
-                <option value="">選択</option>
+                <option value="">선택</option>
                 {GENDERS.map((g) => (
                   <option key={g} value={g}>{g}</option>
                 ))}
               </select>
             </div>
             <div>
-              <label className="block text-[12px] text-muted mb-1.5 font-medium">年齢</label>
+              <label className="block text-[12px] text-muted mb-1.5 font-medium">나이</label>
               <input
                 type="number"
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
-                placeholder="例: 25"
+                placeholder="例: 8"
                 min={1}
                 max={120}
                 required
@@ -110,7 +110,7 @@ export default function NicknameForm({ onSubmit, loading, defaultNickname }: Nic
             disabled={!nickname.trim() || !gender || !ageValid || loading}
             className="w-full py-[14px] rounded-xl btn-brand text-white font-bold text-[15px] disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none"
           >
-            {loading ? '登録中...' : '登録する'}
+            {loading ? '등록중...' : '등록하기'}
           </button>
         </form>
       </div>
